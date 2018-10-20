@@ -25,7 +25,9 @@ echo "Setting up Nexus in project $GUID-nexus"
 #   sleep 10
 # done
 
-# Ideally just calls a template
-# oc new-app -f ../templates/nexus.yaml --param .....
-
 # To be Implemented by Student
+oc project ${GUID}-nexus
+#oc new-app sonatype/nexus3:latest
+#oc expose svc nexus3
+#oc rollout pause dc nexus3
+oc new-app -f ../templates/nexus.yaml
